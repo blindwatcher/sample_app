@@ -186,4 +186,647 @@ ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ git status
 #
 #	modified:   config/environments/test.rb
 #	copied:     typescript -> help
-#	new file:  
+#	new file:   lib/tasks/rspec.rake
+#	new file:   script/autospec
+#	new file:   script/spec
+#	new file:   spec/rcov.opts
+#	new file:   spec/spec.opts
+#	new file:   spec/spec_helper.rb
+#	modified:   typescript
+#
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ git commit -am "Added RSpec files"
+[static-pages 850b758] Added RSpec files
+ 9 files changed, 515 insertions(+), 2 deletions(-)
+ create mode 100644 lib/tasks/rspec.rake
+ create mode 100755 script/autospec
+ create mode 100755 script/spec
+ create mode 100644 spec/rcov.opts
+ create mode 100644 spec/spec.opts
+ create mode 100644 spec/spec_helper.rb
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gem install autotest-rails -v 4.1.0
+Successfully installed ZenTest-4.3.1
+Successfully installed autotest-rails-4.1.0
+2 gems installed
+Installing ri documentation for ZenTest-4.3.1...
+Installing ri documentation for autotest-rails-4.1.0...
+Installing RDoc documentation for ZenTest-4.3.1...
+Installing RDoc documentation for autotest-rails-4.1.0...
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ script/generate rspec_controller Pages homes contr[Kact[1P contact
+      exists  app/controllers/
+      exists  app/helpers/
+      exists  app/views/pages
+      create  spec/controllers/
+      create  spec/helpers/
+      create  spec/views/pages
+      create  spec/controllers/pages_controller_spec.rb
+      create  spec/helpers/pages_helper_spec.rb
+   identical  app/controllers/pages_controller.rb
+   identical  app/helpers/pages_helper.rb
+      create  spec/views/pages/home.html.erb_spec.rb
+   identical  app/views/pages/home.html.erb
+      create  spec/views/pages/contact.html.erb_spec.rb
+   identical  app/views/pages/contact.html.erb
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ rm -rf test/
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ rm -0[Krf spec/views
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ rm -f spec/helpers/pages_helper_spec.rb 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ cat spec./[K[K/x[Kcontrollers/pages_controller_spec.rb 
+require 'spec_helper'
+
+describe PagesController do
+
+  #Delete these examples and add some real ones
+  it "should use PagesController" do
+    controller.should be_an_instance_of(PagesController)
+  end
+
+
+  describe "GET 'home'" do
+    it "should be successful" do
+      get 'home'
+      response.should be_success
+    end
+  end
+
+  describe "GET 'contact'" do
+    it "should be successful" do
+      get 'contact'
+      response.should be_success
+    end
+  end
+end
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ jedit
+The program 'jedit' is currently not installed.  You can install it by typing:
+sudo apt-get install jedit
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ Je[K[KjEdit
+No command 'jEdit' found, did you mean:
+ Command 'jedit' from package 'jedit' (universe)
+jEdit: command not found
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit spec/controllers/pages_controller_spec.rb 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ spec spec/
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0m[32m.[0m[32m.[0m
+
+Finished in 0.337153606 seconds
+
+[32m3 examples, 0 failures[0m
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ rake db:migrate
+(in /home/ztan/workspace/rails_projects/sample_app)
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ autospec
+loading autotest/rails_rspec
+/home/ztan/.rvm/rubies/ruby-1.9.1-p378/lib/ruby/1.9.1/pathname.rb:270: warning: `*' interpreted as argument prefix
+/home/ztan/.rvm/rubies/ruby-1.9.1-p378/bin/ruby /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/bin/spec --autospec /home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb -O spec/spec.opts 
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0m[32m.[0m[32m.[0m
+
+Finished in 0.267493199 seconds
+
+[32m3 examples, 0 failures[0m
+
+
+
+
+
+^CInterrupt a second time to quit
+/home/ztan/.rvm/rubies/ruby-1.9.1-p378/bin/ruby /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/bin/spec --autospec /home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb -O spec/spec.opts 
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0m[32m.[0m[32m.[0m
+
+Finished in 0.277716915 seconds
+
+[32m3 examples, 0 failures[0m
+^CInterrupt a second time to quit
+/home/ztan/.rvm/rubies/ruby-1.9.1-p378/bin/ruby /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/bin/spec --autospec /home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb -O spec/spec.opts 
+^C/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require': Interrupt
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `block in require'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/json/encoding.rb:3:in `<top (required)>'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `block in require'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/json.rb:2:in `<top (required)>'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `block in require'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support.rb:57:in `<top (required)>'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activerecord-2.3.5/lib/active_record.rb:25:in `require'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activerecord-2.3.5/lib/active_record.rb:25:in `<top (required)>'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/initializer.rb:268:in `require'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/initializer.rb:268:in `block in require_frameworks'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/initializer.rb:268:in `each'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/initializer.rb:268:in `require_frameworks'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/initializer.rb:134:in `process'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/initializer.rb:113:in `run'
+	from /home/ztan/workspace/rails_projects/sample_app/config/environment.rb:9:in `<top (required)>'
+	from /home/ztan/workspace/rails_projects/sample_app/spec/spec_helper.rb:4:in `require'
+	from /home/ztan/workspace/rails_projects/sample_app/spec/spec_helper.rb:4:in `<top (required)>'
+	from /home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:1:in `require'
+	from /home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:1:in `<top (required)>'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/lib/spec/runner/example_group_runner.rb:15:in `load'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/lib/spec/runner/example_group_runner.rb:15:in `block in load_files'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/lib/spec/runner/example_group_runner.rb:14:in `each'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/lib/spec/runner/example_group_runner.rb:14:in `load_files'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/lib/spec/runner/options.rb:133:in `run_examples'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/lib/spec/runner/command_line.rb:9:in `run'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/bin/spec:5:in `<main>'
+Interrupt a second time to quit
+^Cztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ ls
+app  config  db  doc  help  lib  log  public  Rakefile	README	script	spec  tmp  typescript  vendor
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit spec/on[K[Kcontrollers/pages_controller_spec.rb 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ spexc [K[K[Kc spec
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[31mF[0m[32m.[0m[32m.[0m[32m.[0m
+
+1)
+[31mActionController::UnknownAction in 'PagesController GET 'about' should be successful'
+No action responded to about. Actions: contact and home[0m
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/base.rb:1337:in `perform_action'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `block in perform_action_with_benchmark'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `block in ms'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action_with_flash'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/test_process.rb:567:in `process_with_test'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/test_process.rb:447:in `process'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/test_process.rb:398:in `get'
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:27:in `block (3 levels) in <top (required)>'
+
+Finished in 0.273477681 seconds
+
+[31m4 examples, 1 failure[0m
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gem list
+
+*** LOCAL GEMS ***
+
+actionmailer (2.3.5)
+actionpack (2.3.5)
+activerecord (2.3.5)
+activeresource (2.3.5)
+activesupport (2.3.5)
+autotest-rails (4.1.0)
+configuration (1.1.0)
+ffi (0.6.3)
+heroku (1.9.9)
+hoe (2.6.0)
+json_pure (1.4.3)
+launchy (0.3.5)
+mime-types (1.16)
+rack (1.0.1)
+rails (2.3.5)
+rake (0.8.7)
+rdoc (2.5.8)
+rest-client (1.4.2)
+rspec (1.3.0)
+rspec-rails (1.3.2)
+rubyforge (2.0.4)
+rubygems-update (1.3.7)
+sequel (3.10.0)
+sinatra (1.0)
+sqlite3 (0.1.1)
+sqlite3-ruby (1.2.5)
+taps (0.3.5)
+test-unit (1.2.3)
+ZenTest (4.3.1)
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gem unint[Kstall autotest-raisl[K[Kls
+Successfully uninstalled autotest-rails-4.1.0
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ spec /spec[K[K[K[K[Kspec/
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[31mF[0m[32m.[0m[32m.[0m[32m.[0m
+
+1)
+[31mActionController::UnknownAction in 'PagesController GET 'about' should be successful'
+No action responded to about. Actions: contact and home[0m
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/base.rb:1337:in `perform_action'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `block in perform_action_with_benchmark'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `block in ms'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action_with_flash'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/test_process.rb:567:in `process_with_test'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/test_process.rb:447:in `process'
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.5/lib/action_controller/test_process.rb:398:in `get'
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:27:in `block (3 levels) in <top (required)>'
+
+Finished in 0.301207551 seconds
+
+[31m4 examples, 1 failure[0m
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gem list
+
+*** LOCAL GEMS ***
+
+actionmailer (2.3.5)
+actionpack (2.3.5)
+activerecord (2.3.5)
+activeresource (2.3.5)
+activesupport (2.3.5)
+configuration (1.1.0)
+ffi (0.6.3)
+heroku (1.9.9)
+hoe (2.6.0)
+json_pure (1.4.3)
+launchy (0.3.5)
+mime-types (1.16)
+rack (1.0.1)
+rails (2.3.5)
+rake (0.8.7)
+rdoc (2.5.8)
+rest-client (1.4.2)
+rspec (1.3.0)
+rspec-rails (1.3.2)
+rubyforge (2.0.4)
+rubygems-update (1.3.7)
+sequel (3.10.0)
+sinatra (1.0)
+sqlite3 (0.1.1)
+sqlite3-ruby (1.2.5)
+taps (0.3.5)
+test-unit (1.2.3)
+ZenTest (4.3.1)
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ sudo[K[K[K[Kkwrit[K[K[K[K[Kgedit app/controllers/pages_controller.rb 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/c[Kviews/pages/about.html.erb
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ spec spec/
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m
+
+Finished in 0.294653504 seconds
+
+[32m4 examples, 0 failures[0m
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit /~/.rvm[K[K[K[K[K[K[K~/.rvm/
+archives/ config/   gems/     hooks/    LICENCE   README    scripts/  tmp/      
+bin/      examples/ help/     lib/      log/      rubies/   src/      
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit ~/.rvm/
+archives/ config/   gems/     hooks/    LICENCE   README    scripts/  tmp/      
+bin/      examples/ help/     lib/      log/      rubies/   src/      
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit ~/.rvm/gems/ruby-1.1[K9.1-p378/gems/ra
+rack-1.0.1/  rails-2.3.5/ rake-0.8.7/  
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit ~/.rvm/gems/ruby-1.9.1-p378/gems/ra
+rack-1.0.1/  rails-2.3.5/ rake-0.8.7/  
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit ~/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/li b/rails/gem_dependency.rb [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwrite [K[K[K[K[K[K[Kgedit spec/controllers/pages_controller_spec.rb 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ spec spec?[K/
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0m[31mF[0m[32m.[0m[31mF[0m[32m.[0m[31mF[0m[32m.[0m
+
+1)
+[31m'PagesController GET 'about' should have the right title' FAILED
+Expected at least 1 element matching "title", found 0.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:47:in `block (3 levels) in <top (required)>'
+
+2)
+[31m'PagesController GET 'contact' should have the right title' FAILED
+Expected at least 1 element matching "title", found 0.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:33:in `block (3 levels) in <top (required)>'
+
+3)
+[31m'PagesController GET 'home' should have the right title' FAILED
+Expected at least 1 element matching "title", found 0.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:19:in `block (3 levels) in <top (required)>'
+
+Finished in 0.531934194 seconds
+
+[31m7 examples, 3 failures[0m
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwrite app/views/pages/d[Khome.html.erb
+kwrite(4829)/kdecore (services) KMimeTypeFactory::parseMagic: Now parsing  "/usr/share/mime/magic"
+kwrite(4829)/kdecore (services) KMimeTypeFactory::parseMagic: Now parsing  "/home/ztan/.local/share/mime/magic"
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwrite app/views/pages/home.html.erb[1P[1P[1P[1P[1P[1P app/views/pages/home.html.erbg app/views/pages/home.html.erbe app/views/pages/home.html.erbd app/views/pages/home.html.erbi app/views/pages/home.html.erbt app/views/pages/home.html.erb
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/pages/home.html.erb[1@kwrite[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cspec spec/[K
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0m[31mF[0m[32m.[0m[31mF[0m[32m.[0m[32m.[0m[32m.[0m
+
+1)
+[31m'PagesController GET 'about' should have the right title' FAILED
+Expected at least 1 element matching "title", found 0.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:47:in `block (3 levels) in <top (required)>'
+
+2)
+[31m'PagesController GET 'contact' should have the right title' FAILED
+Expected at least 1 element matching "title", found 0.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:33:in `block (3 levels) in <top (required)>'
+
+Finished in 0.49551856 seconds
+
+[31m7 examples, 2 failures[0m
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/pages/contact.html.erb 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/pages/contact.html.erb [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Khome.html.erb 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/pages/home.html.erb [3@contact[C[C[C[C[C[C[C[C[C[C
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/pages/contact.html.erb [3Phome[C[C[C[C[C[C[C[C[C[C[3@contact[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kabout.html.erb 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ spec spec/
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m
+
+Finished in 0.475285332 seconds
+
+[32m7 examples, 0 failures[0m
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/controllers/pages_controller.rb 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwrite app/views/pages/
+about.html.erb    contact.html.erb  home.html.erb     
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwrite app/views/pages/home.html.erb 
+kwrite(4880)/kdecore (services) KMimeTypeFactory::parseMagic: Now parsing  "/usr/share/mime/magic"
+kwrite(4880)/kdecore (services) KMimeTypeFactory::parseMagic: Now parsing  "/home/ztan/.local/share/mime/magic"
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ cat app/vo[Kiews/[K[K[K[K[K[Kcontrollers/
+application_controller.rb  pages_controller.rb        
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ cat app/controllers/pages_controller.rb 
+class PagesController < ApplicationController
+  def home
+    @title = "Home"
+  end
+
+  def contact
+    @title = "Contact"
+  end
+
+  def about
+    @title = "About"
+  end
+  
+end
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ cat app/controllers/pages_controller.rb [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kapplication_controller.rb 
+# Filters added to this controller apply to all controllers in the application.
+# Likewise, all the methods added will be available for all controllers.
+
+class ApplicationController < ActionController::Base
+  helper :all # include all helpers, all the time
+  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+
+  # Scrub sensitive parameters from your log
+  # filter_parameter_logging :password
+end
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ spec sape[K[K[Kpec/
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m
+
+Finished in 0.476173095 seconds
+
+[32m7 examples, 0 failures[0m
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ t[Kspec spec/cat app/controllers/application_controller.rb [6Ppages[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[3Pkwrite app/views/pages/home.html.e[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[Kabout.html.erb 
+kwrite(4886)/kdecore (services) KMimeTypeFactory::parseMagic: Now parsing  "/usr/share/mime/magic"
+kwrite(4886)/kdecore (services) KMimeTypeFactory::parseMagic: Now parsing  "/home/ztan/.local/share/mime/magic"
+Enchant dict for "en_US" 0x8bcbd58 
+kwrite(4886)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found  0  offers for  "ktexteditorexporter"
+kwrite(4886)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found  0  offers for  "ktexteditorinsertfile"
+kwrite(4886)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found  0  offers for  "ktexteditorkdatatool"
+kwrite(4886)/kdecore (KPluginInfo) KPluginInfo::kcmServices: found  0  offers for  "ktexteditorautobrace"
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ ls
+app  config  db  doc  help  lib  log  public  Rakefile	README	script	spec  tmp  typescript  vendor
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ lskwrite app/views/pages/about.html.erb spec spec/[Kkwrite app/views/pages/about.html.erb [K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcontact.html.erb 
+kwrite(4888)/kdecore (services) KMimeTypeFactory::parseMagic: Now parsing  "/usr/share/mime/magic"
+kwrite(4888)/kdecore (services) KMimeTypeFactory::parseMagic: Now parsing  "/home/ztan/.local/share/mime/magic"
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ spec spec/
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m
+
+Finished in 0.482176904 seconds
+
+[32m7 examples, 0 failures[0m
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwrit[K[K[K[K[Kgedit app/
+controllers/ helpers/     models/      views/       
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/
+layouts/ pages/   
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/layouts/application.html.erb
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedt[Kit app/views/
+layouts/ pages/   
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/p[Kpages/
+about.html.erb     contact.html.erb   home.html.erb      
+about.html.erb~    contact.html.erb~  home.html.erb~     
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/pages/
+about.html.erb     contact.html.erb   home.html.erb      
+about.html.erb~    contact.html.erb~  home.html.erb~     
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/pages/
+about.html.erb     contact.html.erb   home.html.erb      
+about.html.erb~    contact.html.erb~  home.html.erb~     
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/pages/about.html.erb[K[K[K[K[K[K[K[K[K[K[K[K[K[Khome.html.erb
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ spec /spec
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/lib/spec/runner/options.rb:283:in `block in files_to_load': File or directory not found: /spec (RuntimeError)
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/lib/spec/runner/options.rb:275:in `each'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/lib/spec/runner/options.rb:275:in `files_to_load'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/lib/spec/runner/options.rb:133:in `run_examples'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/lib/spec/runner/command_line.rb:9:in `run'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rspec-1.3.0/bin/spec:5:in `<top (required)>'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/bin/spec:19:in `load'
+	from /home/ztan/.rvm/gems/ruby-1.9.1-p378/bin/spec:19:in `<main>'
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ spec /spec[K[K[K[K[Kspec/
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0mignoring attempt to close title with head
+  opened at byte 243, line 5
+  closed at byte 253, line 6
+  attributes at open: {}
+  text around open: " Sample App | About <title>\n  </head>\n  "
+  text around close: "p | About <title>\n  </head>\n  <body>\n   "
+ignoring attempt to close title with html
+  opened at byte 243, line 5
+  closed at byte 878, line 26
+  attributes at open: {}
+  text around open: " Sample App | About <title>\n  </head>\n  "
+  text around close: "\n</html>\n\n  </body>\n</html>\n"
+[31mF[0m[32m.[0mignoring attempt to close title with head
+  opened at byte 245, line 5
+  closed at byte 255, line 6
+  attributes at open: {}
+  text around open: "ample App | Contact <title>\n  </head>\n  "
+  text around close: "| Contact <title>\n  </head>\n  <body>\n   "
+ignoring attempt to close title with html
+  opened at byte 245, line 5
+  closed at byte 752, line 24
+  attributes at open: {}
+  text around open: "ample App | Contact <title>\n  </head>\n  "
+  text around close: "\n</html>\n\n  </body>\n</html>\n"
+[31mF[0m[32m.[0mignoring attempt to close title with head
+  opened at byte 242, line 5
+  closed at byte 252, line 6
+  attributes at open: {}
+  text around open: "l Sample App | Home <title>\n  </head>\n  "
+  text around close: "pp | Home <title>\n  </head>\n  <body>\n   "
+ignoring attempt to close title with html
+  opened at byte 242, line 5
+  closed at byte 443, line 17
+  attributes at open: {}
+  text around open: "l Sample App | Home <title>\n  </head>\n  "
+  text around close: "n.\n</p>\n\n\n  </body>\n</html>\n"
+[31mF[0m[32m.[0m
+
+1)
+[31m'PagesController GET 'about' should have the right title' FAILED
+<"Ruby on Rails Tutorial Sample App | About"> expected but was
+<"Ruby on Rails Tutorial Sample App | About \n  \n  \n    <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n  \n    Ruby on Rails Tutorial Sample App | About\n  \n  \n    About Us\n    \n      Ruby on Rails Tutorial\n      is a project to make a book and screencasts to teach web development\n      with Ruby on Rails. This\n      is the sample application for the tutorial.">.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:47:in `block (3 levels) in <top (required)>'
+
+2)
+[31m'PagesController GET 'contact' should have the right title' FAILED
+<"Ruby on Rails Tutorial Sample App | Contact"> expected but was
+<"Ruby on Rails Tutorial Sample App | Contact \n  \n  \n    <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n  \n    Ruby on Rails Tutorial Sample App | Contact\n  \n  \n    Contact\n    \n      Contact Ruby on Rails Tutorial about the sample app at the\n      feedback page.">.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:33:in `block (3 levels) in <top (required)>'
+
+3)
+[31m'PagesController GET 'home' should have the right title' FAILED
+<"Ruby on Rails Tutorial Sample App | Home"> expected but was
+<"Ruby on Rails Tutorial Sample App | Home \n  \n  \n    Sample App Home\n\n  This is the home page for the\n  Ruby on Rails Tutorial\n  sample application.">.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:19:in `block (3 levels) in <top (required)>'
+
+Finished in 0.479717639 seconds
+
+[31m7 examples, 3 failures[0m
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ ls
+app  config  db  doc  help  lib  log  public  Rakefile	README	script	spec  tmp  typescript  vendor
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ lsspec spec//specgedit app/views/pages/home.html.erb[K[K[K[K[K[K[K[K[K[K[K[K[Kabout.html.erb
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/pages/about.html.erb[C[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcontact.html.erb
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/pages/contact.html.erb[2Pabout.html.erbls[Kspec spec//specspec/
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0mignoring attempt to close title with head
+  opened at byte 243, line 5
+  closed at byte 253, line 6
+  attributes at open: {}
+  text around open: " Sample App | About <title>\n  </head>\n  "
+  text around close: "p | About <title>\n  </head>\n  <body>\n   "
+ignoring attempt to close title with html
+  opened at byte 243, line 5
+  closed at byte 563, line 17
+  attributes at open: {}
+  text around open: " Sample App | About <title>\n  </head>\n  "
+  text around close: "al.\n</p>\n\n  </body>\n</html>\n"
+[31mF[0m[32m.[0mignoring attempt to close title with head
+  opened at byte 245, line 5
+  closed at byte 255, line 6
+  attributes at open: {}
+  text around open: "ample App | Contact <title>\n  </head>\n  "
+  text around close: "| Contact <title>\n  </head>\n  <body>\n   "
+ignoring attempt to close title with html
+  opened at byte 245, line 5
+  closed at byte 443, line 15
+  attributes at open: {}
+  text around open: "ample App | Contact <title>\n  </head>\n  "
+  text around close: "a>.\n</p>\n\n  </body>\n</html>\n"
+[31mF[0m[32m.[0mignoring attempt to close title with head
+  opened at byte 242, line 5
+  closed at byte 252, line 6
+  attributes at open: {}
+  text around open: "l Sample App | Home <title>\n  </head>\n  "
+  text around close: "pp | Home <title>\n  </head>\n  <body>\n   "
+ignoring attempt to close title with html
+  opened at byte 242, line 5
+  closed at byte 443, line 17
+  attributes at open: {}
+  text around open: "l Sample App | Home <title>\n  </head>\n  "
+  text around close: "n.\n</p>\n\n\n  </body>\n</html>\n"
+[31mF[0m[32m.[0m
+
+1)
+[31m'PagesController GET 'about' should have the right title' FAILED
+<"Ruby on Rails Tutorial Sample App | About"> expected but was
+<"Ruby on Rails Tutorial Sample App | About \n  \n  \n    About Us\n\n  Ruby on Rails Tutorial\n  is a project to make a book and screencasts to teach web development\n  with Ruby on Rails. This\n  is the sample application for the tutorial.">.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:47:in `block (3 levels) in <top (required)>'
+
+2)
+[31m'PagesController GET 'contact' should have the right title' FAILED
+<"Ruby on Rails Tutorial Sample App | Contact"> expected but was
+<"Ruby on Rails Tutorial Sample App | Contact \n  \n  \n    Contact\n\n  Contact Ruby on Rails Tutorial about the sample app at the\n  feedback page.">.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:33:in `block (3 levels) in <top (required)>'
+
+3)
+[31m'PagesController GET 'home' should have the right title' FAILED
+<"Ruby on Rails Tutorial Sample App | Home"> expected but was
+<"Ruby on Rails Tutorial Sample App | Home \n  \n  \n    Sample App Home\n\n  This is the home page for the\n  Ruby on Rails Tutorial\n  sample application.">.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:19:in `block (3 levels) in <top (required)>'
+
+Finished in 0.491611185 seconds
+
+[31m7 examples, 3 failures[0m
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ spec spec/
+/home/ztan/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+[32m.[0mignoring attempt to close title with head
+  opened at byte 243, line 5
+  closed at byte 253, line 6
+  attributes at open: {}
+  text around open: " Sample App | About <title>\n  </head>\n  "
+  text around close: "p | About <title>\n  </head>\n  <body>\n   "
+ignoring attempt to close title with html
+  opened at byte 243, line 5
+  closed at byte 563, line 17
+  attributes at open: {}
+  text around open: " Sample App | About <title>\n  </head>\n  "
+  text around close: "al.\n</p>\n\n  </body>\n</html>\n"
+[31mF[0m[32m.[0mignoring attempt to close title with head
+  opened at byte 245, line 5
+  closed at byte 255, line 6
+  attributes at open: {}
+  text around open: "ample App | Contact <title>\n  </head>\n  "
+  text around close: "| Contact <title>\n  </head>\n  <body>\n   "
+ignoring attempt to close title with html
+  opened at byte 245, line 5
+  closed at byte 443, line 15
+  attributes at open: {}
+  text around open: "ample App | Contact <title>\n  </head>\n  "
+  text around close: "a>.\n</p>\n\n  </body>\n</html>\n"
+[31mF[0m[32m.[0mignoring attempt to close title with head
+  opened at byte 242, line 5
+  closed at byte 252, line 6
+  attributes at open: {}
+  text around open: "l Sample App | Home <title>\n  </head>\n  "
+  text around close: "pp | Home <title>\n  </head>\n  <body>\n   "
+ignoring attempt to close title with html
+  opened at byte 242, line 5
+  closed at byte 443, line 17
+  attributes at open: {}
+  text around open: "l Sample App | Home <title>\n  </head>\n  "
+  text around close: "n.\n</p>\n\n\n  </body>\n</html>\n"
+[31mF[0m[32m.[0m
+
+1)
+[31m'PagesController GET 'about' should have the right title' FAILED
+<"Ruby on Rails Tutorial Sample App | About"> expected but was
+<"Ruby on Rails Tutorial Sample App | About \n  \n  \n    About Us\n\n  Ruby on Rails Tutorial\n  is a project to make a book and screencasts to teach web development\n  with Ruby on Rails. This\n  is the sample application for the tutorial.">.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:47:in `block (3 levels) in <top (required)>'
+
+2)
+[31m'PagesController GET 'contact' should have the right title' FAILED
+<"Ruby on Rails Tutorial Sample App | Contact"> expected but was
+<"Ruby on Rails Tutorial Sample App | Contact \n  \n  \n    Contact\n\n  Contact Ruby on Rails Tutorial about the sample app at the\n  feedback page.">.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:33:in `block (3 levels) in <top (required)>'
+
+3)
+[31m'PagesController GET 'home' should have the right title' FAILED
+<"Ruby on Rails Tutorial Sample App | Home"> expected but was
+<"Ruby on Rails Tutorial Sample App | Home \n  \n  \n    Sample App Home\n\n  This is the home page for the\n  Ruby on Rails Tutorial\n  sample application.">.
+<false> is not true.[0m
+/home/ztan/workspace/rails_projects/sample_app/spec/controllers/pages_controller_spec.rb:19:in `block (3 levels) in <top (required)>'
+
+Finished in 0.489117295 seconds
+
+[31m7 examples, 3 failures[0m
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwirte app/
+controllers/ helpers/     models/      views/       
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwirte app/views/
+layouts/ pages/   
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwirte app/views/layouts/application.html.erb 
+No command 'kwirte' found, did you mean:
+ Command 'kwrite' from package 'kwrite' (main)
+kwirte: command not found
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwirte app/views/layouts/application.html.erb [C[1P[1P[1P[1P[1P[1P[1@g[1@e[1@d[1@i[1@t
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ gedit app/views/layouts/application.html.erb [1@kwi
