@@ -1,0 +1,80 @@
+Script started on Mon 17 May 2010 01:11:48 PM EDT
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ script[K[K[K[K[K[K
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ ls
+app  config  db  doc  lib  log	public	Rakefile  README  script  test	tmp  typescript  vendor
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ ps
+  PID TTY          TIME CMD
+ 3786 pts/1    00:00:00 bash
+ 3799 pts/1    00:00:00 ps
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ script/help
+bash: script/help: No such file or directory
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ script help
+Script started, file is help
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ s[Kls
+app  config  db  doc  help  lib  log  public  Rakefile	README	script	test  tmp  typescript  vendor
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ s[Kcd script/
+about        dbconsole    generate     plugin       server       
+console      destroy      performance/ runner       
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ cd script/[K[K[K[K[K[K[K[K[K[Kscript/destroy controller Pages homes
+          rm  app/views/pages/homes.html.erb
+          rm  test/unit/helpers/pages_helper_test.rb
+          rm  app/helpers/pages_helper.rb
+          rm  test/functional/pages_controller_test.rb
+          rm  app/controllers/pages_controller.rb
+       rmdir  test/unit/helpers
+       rmdir  test/unit
+    notempty  test
+       rmdir  test/functional
+    notempty  test
+    notempty  app/views/pages
+    notempty  app/views
+    notempty  app
+    notempty  app/helpers
+    notempty  app
+    notempty  app/controllers
+    notempty  app
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ sce[Kript [K/generate controller Pages home
+      exists  app/controllers/
+      exists  app/helpers/
+      exists  app/views/pages
+      create  test/functional/
+      create  test/unit/helpers/
+      create  app/controllers/pages_controller.rb
+      create  test/functional/pages_controller_test.rb
+      create  app/helpers/pages_helper.rb
+      create  test/unit/helpers/pages_helper_test.rb
+      create  app/views/pages/home.html.erb
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwrite app/
+controllers/ helpers/     models/      views/       
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwrite app/controllers/pages_controller.rb 
+^[[A^[[A        
+
+script/generate controller QClipboard: Unable to receive an event from the clipboard manager in a reasonable time
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ 
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ script/generate controller Pages home contact
+      exists  app/controllers/
+      exists  app/helpers/
+      exists  app/views/pages
+      exists  test/functional/
+      exists  test/unit/helpers/
+overwrite app/controllers/pages_controller.rb? (enter "h" for help) [Ynaqdh] Y
+       force  app/controllers/pages_controller.rb
+   identical  test/functional/pages_controller_test.rb
+   identical  app/helpers/pages_helper.rb
+   identical  test/unit/helpers/pages_helper_test.rb
+   identical  app/views/pages/home.html.erb
+   identical  app/views/pages/contact.html.erb
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ ls
+app  config  db  doc  help  lib  log  public  Rakefile	README	script	test  tmp  typescript  vendor
+ztan@ztan-ubuntu:~/workspace/rails_projects/sample_app$ kwrite app/controllers/pages_controller.rb 
+
+cat app/views/pages/home/ .htnml   ml.erb
+
+QClipboard: Unable to receive an event from the clipboard manager in a reasonable time
+ztan@ztan-ubuntu:~/workspace/rails_p
